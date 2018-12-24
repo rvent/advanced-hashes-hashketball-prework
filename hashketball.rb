@@ -202,13 +202,64 @@ end
 
 def most_points_scored
   most_points = nil
+  player = nil
   game = game_hash
   game.each do |k, v|
     v[:players].each do |key, val|
       if most_points == nil || most_points < val[:points]
         most_points = val[:points]
+        player = key
       end
     end
   end
-  most_points
+  player
+end
+
+def winning_team
+  home_total = 0
+  away_total = 0
+  game = game_hash
+  game.each do |k, v|
+    v[:players].each do |key, val|
+      if k == :home
+        home_total += val[:points]
+      else
+        away_total += val[:points]
+      end
+    end
+  end
+  if away_total > home_total
+    return game[:away][:team_name]
+  else
+    return game[:home][:team_name]
+  end
+end
+
+def player_with_longest_name
+  longest_name = nil
+  name_length = nil
+  game = game_hash
+  game.each do |k, v|
+    v[:players].each do |key, val|
+      if name_length == nil || name_length < key.length
+        name_length = key.length
+        longest_name = key
+      end
+    end
+  end
+  longest_name
+end
+
+def long_name_steals_a_ton?
+  game = game_hash
+  long_name_player = player_with_longest_name
+  long_name_steals = player_stats(long_name_player)[:steals]
+  game.each do |_, v|
+    v[:players].each do |key, val|
+      if long_name_player != key && (val[:steals] > long_name_steals)
+        return false
+      end
+    end
+  end
+  true
 end

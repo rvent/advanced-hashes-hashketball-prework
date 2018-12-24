@@ -258,32 +258,32 @@ describe 'bonus' do
 
   end
 
-#   describe '#winning_team' do
+  describe '#winning_team' do
 
-#     it 'returns the Brooklyn Nets' do
-#       expect(winning_team).to eq("Brooklyn Nets")
-#     end
+    it 'returns the Brooklyn Nets' do
+      expect(winning_team).to eq("Brooklyn Nets")
+    end
 
-#   end
+  end
 
-#   describe '#player_with_longest_name' do
+  describe '#player_with_longest_name' do
 
-#     it 'returns Brendan Haywood' do
-#       expect(player_with_longest_name).to eq("Brendan Haywood")
-#     end
+    it 'returns Brendan Haywood' do
+      expect(player_with_longest_name).to eq("Brendan Haywood")
+    end
 
-#   end
+  end
 
-# end
+end
 
-# describe 'super bonus' do
+describe 'super bonus' do
 
-#   describe '#long_name_steals_a_ton?' do
+  describe '#long_name_steals_a_ton?' do
 
-#     it 'returns true' do
-#       expect(long_name_steals_a_ton?).to eq(true)
-#     end
+    it 'returns true' do
+      expect(long_name_steals_a_ton?).to eq(true)
+    end
 
-#   end
+  end
 
-# end
+end
