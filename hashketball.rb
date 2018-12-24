@@ -262,3 +262,5 @@ def long_name_steals_a_ton?
   end
   long_name_player
 end
+
+puts long_name_steals_a_ton?
