@@ -202,13 +202,15 @@ end
 
 def most_points_scored
   most_points = nil
+  player = nil
   game = game_hash
   game.each do |k, v|
     v[:players].each do |key, val|
       if most_points == nil || most_points < val[:points]
         most_points = val[:points]
+        player = key
       end
     end
   end
-  most_points
+  player
 end
