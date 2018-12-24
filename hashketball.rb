@@ -237,10 +237,12 @@ end
 
 def player_with_longest_name
   longest_name = nil
+  name_length = nil
   game = game_hash
   game.each do |k, v|
     v[:players].each do |key, val|
-      if longest_name == nil || longest_name < key.length
+      if name_length == nil || name_length < key.length
+        name_length = key.length
         longest_name = key
       end
     end
