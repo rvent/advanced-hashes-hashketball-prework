@@ -255,7 +255,7 @@ def long_name_steals_a_ton?
   long_name_player = player_with_longest_name
   game.each do |k, v|
     v[:players].each do |key, val|
-      if long_name_player != key #&& (val[:steals] > v[:players][long_name_player][:steals])
+      if long_name_player.to_s != key #&& (val[:steals] > v[:players][long_name_player][:steals])
         puts key
       end
     end
