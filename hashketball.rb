@@ -251,6 +251,7 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton?
+  game = game_hash
   long_name_player = player_with_longest_name
   game.each do |k, v|
     v[:players].each do |key, val|
