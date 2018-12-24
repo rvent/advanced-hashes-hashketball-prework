@@ -253,13 +253,13 @@ end
 def long_name_steals_a_ton?
   game = game_hash
   long_name_player = player_with_longest_name
-  game.each do |k, v|
-    v[:players].each do |key, val|
-      if long_name_player != key && (val[:steals] > v[:players][long_name_player][:steals])
-        return false
-      end
-    end
-  end
+  # game.each do |k, v|
+  #   v[:players].each do |key, val|
+  #     if long_name_player != key && (val[:steals] > v[:players][long_name_player][:steals])
+  #       return false
+  #     end
+  #   end
+  # end
   long_name_player
 end
 
